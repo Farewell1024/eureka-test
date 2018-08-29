@@ -37,10 +37,10 @@ public class UserController {
         return null;
     }
 
-    @GetMapping("/sc/user/{id}")
+    @GetMapping("/user/{id}")
     public Order findByIdByEurekaServer(@PathVariable Long id) {
         String providerServiceUrl = serviceUrl();
-        return this.restTemplate.getForObject(providerServiceUrl + "sc/order/" + id,
+        return this.restTemplate.getForObject(providerServiceUrl + "/order/" + id,
                 Order.class);
     }
 }
